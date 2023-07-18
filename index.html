@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consent Page</title>
+    <style>
+        /* Added a universal selector to reset the default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    display: flex;  /* New */
+    flex-direction: column;  /* New */
+    min-height: 100vh;  /* New */
+    font-family: Arial, sans-serif;
+    background-color: #F9F9F9;
+    color: #660000;
+}
+
+        
+.content-wrapper {
+    flex: 1 0 auto;  /* New */
+}
+
+        h1 {
+            color: #CC0000;
+            margin-bottom: 20px;
+        }
+        h3{
+            color:#CC0000;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        #consentCheckbox + label {
+            font-weight: bold;
+
+        }
+
+        button {
+            background-color: #CC0000;
+            color: #FFF;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #990000;
+        }
+
+       .header {
+            background: linear-gradient(to right, #CC0000, #CC0000);
+            color: #CC0000;
+            padding: 0; 
+            text-align: center;
+            width: 100%; 
+            height: 120px;
+        }
+
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+}
+
+.accordion .arrow {
+    margin-right: 10px;
+    transition: 0.4s;
+}
+
+.footer {
+    flex-shrink: 0;  /* New */
+    width: 100%;
+    background-color: #CC0000;
+    color: white;
+    text-align: center;
+    padding: 10px 0; 
+    height: 120px;
+}
+        /* New style for the links in the footer */
+    .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+    }
+
+        .footer a:hover {
+            color: #ddd;
+        }
+
+        .logo {
+            width: 100px;
+            height: 110px;
+            margin-left: 10px;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-links a {
+            color: #FFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .header-links a:hover {
+            color: #dddddd;
+        }
+
+        /* Accordion styles */
+        button.accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        button.accordion.active, button.accordion:hover {
+            background-color: #ddd;
+        }
+
+        
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .arrow {
+    display: inline-block;
+    margin-right: 10px;
+    border: solid #444;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+    </style>
+    <script>
+        function goToForm() {
+            if (document.getElementById('consentCheckbox').checked) {
+                window.location.href = 'https://forms.gle/SCKvwTA76KZ7sfaq5';
+            } else {
+                alert('Please agree to the Terms of Service and Privacy Policy to continue.');
+            }
+        }
+
+        /* Accordion functionality */
+       window.onload = function () {
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var arrow = this.getElementsByClassName("arrow")[0];
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+                arrow.innerHTML = "&#9658;";  // right-pointing arrow
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                arrow.innerHTML = "&#9660;";  // down-pointing arrow
+            } 
+        });
+    }
+}
+           
+    </script>
+</head>
+<body>
+<div class="content-wrapper">
+<div class="header">
+    <div class="header-content">
+        <img src="Karakostas-1.png" alt="Your Store Logo" class="logo"> 
+    </div>
+</div>
+
+<!-- Encapsulated the other sections with the new .content-section class -->
+<div class="content-section">
+    <br><h1>Consent Page</h1>
+
+   <div class="accordion"><span class="arrow">&#9658;</span><h3>Privacy Policy<h3></div>
+    <div class="panel">
+        <p>
+        <strong>Privacy Policy for Karakostas Honda Motorcycle Dealership</strong> <br><br>
+
+This Privacy Policy outlines how <strong>Karakostas Honda Motorcycle Dealership</strong> and its services collect, store, use, and disclose your Personal Data when you fill out our form and use our services. <br> <br>
+
+<strong>What Information We Collect: </strong><br><br>
+
+When you fill out our form, we collect the following Personal Data: <br><br>
+
+    First Name<br>
+    Last Name<br>
+    Cell Phone Number<br>
+    Email<br>
+    Motorcycle Model Code<br>
+    Motorcycle Color Code<br>
+    License Plate<br>
+    Payment Method (Cash or Card)<br>
+    Receipt Type<br>
+    Social Security Number<br> <br>
+
+    This information is necessary to provide our services and will not be used for any other purposes. <br>
+
+<br><strong>How We Use This Information</strong> <br><br>
+
+The information you provide us is used for: <br>
+<br>
+    1. Processing your transactions<br>
+    2. Providing customer service and managing your account<br>
+    3. Maintaining records for tax, legal, and business purposes<br>
+<br>
+<strong>How We Store and Secure Your Information</strong> <br><br>
+
+Your Personal Data is securely stored in a Google Form and Sheet, which is accessible only by the owner of the store. We implement appropriate data collection, storage, processing practices, and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.
+<br><br>
+<strong>Retention of Your Personal Data</strong><br><br>
+
+We retain your Personal Data for as long as it is necessary to provide you with our services, and for legal and business purposes.
+<br><br>
+<strong>Transferring of Data</strong><br><br>
+
+In compliance with GDPR regulations, we ensure that transferring of data outside of the European Economic Area (if applicable) meets the required protection levels and standards.
+<br><br>
+<strong>Your Rights as per the General Data Protection Regulation (GDPR), you have the following rights:</strong> <br><br>
+
+    1. Right to access: You have the right to request copies of your Personal Data.<br>
+    2. Right to rectification: You have the right to request correction of any incorrect data we hold about you.<br>
+    3. Right to erasure: You have the right to request that we delete your Personal Data, under certain conditions.<br>
+    4. Right to restriction of processing: You have the right to request that we restrict the processing of your Personal Data, under certain conditions.<br>
+    5. Right to object to processing: You have the right to object to our processing of your Personal Data, under certain conditions.<br>
+    6. Right to data portability: You have the right to request that we transfer your Personal Data to you or another organization
+<br><br><strong>Contact Us</strong><br><br>
+
+If you have any questions about this Privacy Policy, please contact us at <strong> 210 211 1315.</strong>
+    </p>
+    </div>
+
+<div class="accordion"><span class="arrow">&#9658;</span><h3>Terms of Service</h3></div>
+    <div class="panel">
+        <p>
+        Welcome to <strong>Karakostas Honda Motorcycle Dealership</strong>. By using our services, you agree to these Terms of Service. Please read them carefully.
+<br><br>
+<strong>1. Our Services</strong> <br><br>
+
+We provide motorcycle-related services, including repairs, maintenance, and sales. In order to use our services, you are required to provide certain personal data. Please review our Privacy Policy to understand what information we collect and how we use it.
+<br><br>
+<strong>2. Use of Our Services </strong><br><br>
+
+You agree to use our services for lawful purposes only. You may not use our services in any way that violates local, national, or international law, or for any fraudulent purpose.
+<br><br>
+<strong>3. Your Information</strong> <br><br>
+
+You represent and warrant that the information you provide us is accurate and complete. It is your responsibility to keep this information updated.
+<br><br>
+<strong>4. Payment</strong><br><br>
+
+You agree to pay for all services requested using our form. Payment is due upon completion of the service, and can be made either by card or cash.
+<br><br>
+<strong>5. Data Breach</strong><br><br>
+
+In the unlikely event of a data breach, we commit to notify all affected parties and relevant authorities within 72 hours of becoming aware of the breach, in compliance with GDPR regulations.
+<br><br>
+<strong>6. Limitation of Liability</strong><br><br>
+
+To the extent permitted by law, <strong>Karakostas Honda Motorcycle Dealership</strong> will not be responsible for any loss or damage resulting from your use of our services.
+<br><br>
+<strong>7. Changes to These Terms</strong><br><br>
+
+We may modify these Terms of Service from time to time. Any changes will be posted on this page. Your continued use of our services after changes to these Terms indicates your agreement to the revised terms.
+<br><br>
+<strong>8. Contact Us</strong><br><br>
+
+If you have any questions about these Terms of Service, please contact us at Phone:<strong> 210 211 1315.</strong>
+    </p>
+    </div>
+<br>
+<div id="ela">
+    <input type="checkbox" id="consentCheckbox">
+    <label for="consentCheckbox">I agree to the Terms of Service and Privacy Policy.</label>
+    <br>
+    <button onclick="goToForm()"><strong>Continue</strong></button>
+</div>
+</div>
+</div>
+<div class="footer">
+        <p>© 2023 Karakostas Honda Motorcycle Dealership</p>
+        <p>
+            <a href="https://honda-karakostas.gr">Web Page</a> |
+            <a href="#">Γ. Καρακώστας και ΣΙΑ Ε.Ε. | 2102111315</a> |
+            <a href="https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86%CF%8C%CF%81%CE%BF%CF%82+%CE%93%CE%B1%CE%BB%CE%B1%CF%84%CF%83%CE%AF%CE%BF%CF%85+76+%26+%CE%94%CF%81%CE%AF%CF%83%CE%BA%CE%BF%CF%85+3,+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+11146/@38.0136424,23.742614,17z/data=!3m1!4b1?entry=ttu">Λεωφόρος Γαλατσίου 76 & Δρίσκου 3, Γαλάτσι 11146</a>
+        </p>
+    </div>
+</body>
+</html>
